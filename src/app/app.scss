@@ -1,0 +1,16 @@
+$heading-color: #333;
+$heading-highlight-color: #fa2800;
+
+// App title
+//
+// :hover   - Highlights when hovering
+//
+// Styleguide base
+.app__title {
+  font-size: 4rem;
+  color: $heading-color;
+
+  &:hover {
+    color: $heading-highlight-color;
+  }
+}

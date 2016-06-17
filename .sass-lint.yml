@@ -1,0 +1,12 @@
+# Linter Options
+options:
+  # Don't merge default rules
+  merge-default-rules: false
+# File Options
+files:
+  include: 'src/**/*.s+(a|c)ss'
+# Rule Configuration
+rules:
+  extends-before-mixins: 2
+  extends-before-declarations: 2
+  placeholder-in-extend: 2
