@@ -5,7 +5,9 @@
   "keywords": [
     "angular2",
     "webpack",
-    "typescript"
+    "typescript",
+    "boilerplate",
+    "starter"
   ],
   "author": "Valentin Nazarov <rusarmy@gmail.com>",
   "license": "MIT",
