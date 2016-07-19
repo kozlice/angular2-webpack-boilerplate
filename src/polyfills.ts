@@ -9,7 +9,6 @@ import 'core-js/es7/reflect';
  * thread-local storage for JavaScript VMs." Angular 2 uses this library.
  * See details here: https://github.com/angular/zone.js/
  */
-// TODO: Move to `vendor.ts`?
 import 'zone.js/dist/zone';
 
 /**
@@ -18,9 +17,7 @@ import 'zone.js/dist/zone';
  */
 import 'ts-helpers';
 
-if (process.env.ENV === 'production') {
-    // TODO: Either do something here or negate condition and remove `else`
-} else {
+if (process.env.ENV !== 'production') {
     /**
      * You can use `import` only in a namespace or module in TypeScript, so use `require` here.
      */
