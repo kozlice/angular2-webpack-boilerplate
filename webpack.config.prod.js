@@ -14,7 +14,7 @@ config.output = {
     publicPath: '/',
     filename: '[name].[hash].js',
     chunkFilename: '[id].[hash].chunk.js',
-    sourceMapFilename: '[name].map'
+    sourceMapFilename: '[name].[hash].map'
 };
 
 /**
@@ -37,3 +37,5 @@ config.plugins.push(new webpack.DefinePlugin({
         'ENV': JSON.stringify(ENV)
     }
 }));
+
+module.exports = config;
