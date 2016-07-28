@@ -12,10 +12,6 @@ import 'zone.js/dist/jasmine-patch';
 
 import 'ts-helpers';
 
-import 'zone.js/dist/sync-test';
-import 'zone.js/dist/async-test';
-import 'zone.js/dist/fake-async-test';
-
 import { setBaseTestProviders } from '@angular/core/testing';
 
 import {
@@ -28,10 +24,8 @@ setBaseTestProviders(
     TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS
 );
 
-let testContext = (<{ context?: Function }>require).context(
-    './',
-    true,
-    /\.spec\.ts/
-);
-
+let testContext = (<{ context?: Function }>require).context('./tests', true, /\.spec\.ts/);
 testContext.keys().forEach(testContext);
+
+let coverageContext = (<{ context?: Function }>require).context('./src/app', true, /\.ts/);
+coverageContext.keys().forEach(coverageContext);

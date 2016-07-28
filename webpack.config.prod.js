@@ -18,9 +18,13 @@ config.output = {
 };
 
 /**
+ * TODO: Remove comments from resulting JS files
+ */
+
+/**
  * TODO: Something better?
  */
-config.htmlLoader = { minimize: false };
+config.htmlLoader = {minimize: false};
 
 config.plugins.push(
     new webpack.NoErrorsPlugin(),

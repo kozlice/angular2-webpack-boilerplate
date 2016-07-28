@@ -1,5 +1,5 @@
 import { addProviders, inject } from '@angular/core/testing';
-import { AppService } from '../../src/app/app.service';
+import { AppService } from 'app/app.service';
 
 describe('App Service', () => {
     beforeEach(() => addProviders([

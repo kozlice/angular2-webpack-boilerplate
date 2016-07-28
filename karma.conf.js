@@ -18,20 +18,13 @@ module.exports = function(config) {
         /**
          * Entry point / test environment builder is also written in TypeScript.
          */
-        files: ['./tests/main.ts'],
+        files: ['./karma.entry.ts'],
 
         /**
          * Transform files before loading them.
          */
         preprocessors: {
-            './src/**/*.ts': [
-                'webpack',
-                'sourcemap',
-                'coverage'
-            ],
-            './tests/**/*.ts': [
-                'webpack'
-            ]
+            './karma.entry.ts': ['webpack']
         },
 
         webpack: require('./webpack.config.test'),
@@ -45,34 +38,21 @@ module.exports = function(config) {
          * A lot of plugins are available for test results reporting.
          * You can find them here: https://npmjs.org/browse/keyword/karma-reporter
          */
-        reporters: ['coverage', 'karma-remap-istanbul'],
+        reporters: ['mocha', 'coverage'],
 
         /**
-         * Simple summary (printed to the console) and JSON file which we will remap back to TypeScript.
+         * This JSON file is "intermediate", in post-test script we use remap-istanbul to map back to TypeScript
+         * and then generate coverage report.
          */
         coverageReporter: {
             dir: 'coverage',
             reporters: [
-                { type: 'text-summary' },
                 {
                     type: 'json',
                     subdir: '.',
-                    file: 'coverage-final.json'
+                    file: 'coverage.json'
                 }
             ]
-        },
-
-        /**
-         * Map code coverage result back to TypeScript using `karma-remap-istanbul`.
-         */
-        remapIstanbulReporter: {
-            src: 'coverage/coverage-final.json',
-            reports: {
-                lcovonly: 'coverage/lcov.info',
-                html: 'coverage/report'
-            },
-            timeoutNotCreated: 5000,
-            timeoutNoMoreFiles: 1000
         },
 
         port: 9876,
