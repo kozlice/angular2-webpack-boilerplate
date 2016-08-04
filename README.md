@@ -28,9 +28,13 @@ Use `npm lint` to check TypeScript files (via [tslint](https://github.com/palant
 
 You won't find end-to-end tests in this project (usually people use Protractor for this purpose). I believe that E2E/QA testing should be written in a separate project/repository, especially if you are working on projects with microservice architecture.
 
+### Building bundle(s)
+
+Use `npm run build` and you will get JS bundles, their maps and `index.html` in `dist` directory. To build for production, use `NODE_ENV=production npm run build` (webpack configuration is chosen according to this environment variable).
+
 ### Documentation
 
-Run `npm docs` to generate documentation for TypeScript ([typedoc](https://github.com/TypeStrong/typedoc) is used for that) and SASS stylesheets (done with [kss-node](https://github.com/kss-node/kss-node)). This might seem a little bit unusual to have docs for styles, but I find KSS very nice tool to keep them understandable.
+Run `npm run docs` to generate documentation for TypeScript ([typedoc](https://github.com/TypeStrong/typedoc) is used for that) and SASS stylesheets (done with [kss-node](https://github.com/kss-node/kss-node)). This might seem a little bit unusual to have docs for styles, but I find KSS very nice tool to keep them understandable.
 
 ### Notes for development
 
