@@ -17,20 +17,21 @@ config.output = {
     sourceMapFilename: '[name].[hash].map'
 };
 
-/**
- * TODO: Remove comments from resulting JS files
- */
-
-/**
- * TODO: Something better?
- */
-config.htmlLoader = {minimize: false};
-
 config.plugins.push(
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin({
+        comments: false
+    })
 );
+
+/**
+ * See node-sass documentation for full list of options:
+ * https://github.com/sass/node-sass#options
+ */
+config.sassLoader = {
+    outputStyle: 'compressed'
+};
 
 /**
  * Same purpose as in dev config.

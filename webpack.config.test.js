@@ -21,23 +21,24 @@ module.exports = {
             /**
              * Enable inline source maps for code coverage report.
              *
-             * See project repository for details / configuration reference:
-             * https://github.com/s-panferov/awesome-typescript-loader
+             * See info about loaders in dev config.
              */
             {
                 test: /\.ts$/,
-                loader: 'awesome-typescript-loader',
-                query: {
-                    sourceMap: false,
-                    inlineSourceMap: true
-                }
+                loaders: [
+                    'awesome-typescript-loader?' + JSON.stringify({
+                        sourceMap: false,
+                        inlineSourceMap: true
+                    }),
+                    'angular2-template-loader'
+                ]
             },
             /**
-             * These loaders are used in other environments as well.
+             * These loaders are used in other environments as well, see `webpack.config.common.js`.
              */
             {test: /\.json$/, loader: 'json-loader'},
-            {test: /\.html$/, loader: 'html-loader'},
-            {test: /\.scss$/, loaders: ['to-string-loader', 'css-loader', 'sass-loader']}
+            {test: /\.html$/, loader: 'raw-loader'},
+            {test: /\.scss$/, loaders: ['raw-loader', 'sass-loader']}
         ],
         postLoaders: [
             /**

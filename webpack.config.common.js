@@ -25,19 +25,27 @@ module.exports = {
 
     resolve: {
         extensions: ['', '.ts', '.js', '.scss', '.html'],
+        /**
+         * Adding src to resolving paths allows us to do, say, `import 'app/a/a.service'` instead of
+         * import `../../../a/service`. Especially useful for tests, since they are in a separate directory.
+         */
         modulesDirectories: ['node_modules', 'src']
     },
 
     module: {
         loaders: [
             /**
-             * Loader for TypeScript.
+             * Loaders for TypeScript.
              * No need to exclude tests by `(spec|e2e)` mask here, as they are in separate directory.
              *
              * See project repository for details / configuration reference:
              * https://github.com/s-panferov/awesome-typescript-loader
+             * https://github.com/TheLarkInn/angular2-template-loader
              */
-            {test: /\.ts$/, loader: 'awesome-typescript-loader'},
+            {
+                test: /\.ts$/,
+                loaders: ['awesome-typescript-loader', 'angular2-template-loader']
+            },
 
             /**
              * Loaders for HTML templates, JSON files, SASS/SCSS stylesheets. See details at projects' repositories:
@@ -47,8 +55,8 @@ module.exports = {
              * https://github.com/gajus/to-string-loader
              */
             {test: /\.json$/, loader: 'json-loader'},
-            {test: /\.html$/, loader: 'html-loader'},
-            {test: /\.scss$/, loader: 'to-string-loader!css-loader!sass-loader'}
+            {test: /\.html$/, loader: 'raw-loader'},
+            {test: /\.scss$/, loaders: ['raw-loader', 'sass-loader']}
         ]
     },
 

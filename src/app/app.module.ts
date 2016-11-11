@@ -1,14 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from 'app/app.component';
+import { HttpModule, JsonpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
-/**
- * TODO: Example service (HTTP interaction), routing, nested directives, pipe + related tests
- */
+import { routing, appRoutingProviders }  from './app.routing';
+import { AppComponent } from 'app/app.component';
+import { ArticleComponent } from './article/article.component';
+import { ArticleListComponent } from './article/article-list.component';
+
 @NgModule({
-    imports:      [ BrowserModule ],
-    declarations: [ AppComponent ],
-    bootstrap:    [ AppComponent ]
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        JsonpModule,
+        routing
+    ],
+    declarations: [
+        AppComponent,
+        ArticleListComponent,
+        ArticleComponent
+    ],
+    providers: [appRoutingProviders],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -17,7 +17,7 @@ import 'zone.js/dist/zone';
  */
 import 'ts-helpers';
 
-if (process.env.ENV !== 'production') {
+if (['prod', 'production'].indexOf(process.env.ENV) == -1) {
     /**
      * You can use `import` only in a namespace or module in TypeScript, so use `require` here.
      */

@@ -1,16 +1,10 @@
-# An opinionated Angular 2 + Webpack boilerplate
+# An Angular 2 + Webpack boilerplate with examples
 
-**Work in progress.** This kit is not created for learning purposes, but rather as a base for my own upcoming projects. I'm not sure that world needs _yet another_ Angular 2 + webpack boilerplate, but initially it was shared as a solution for [TypeScript code coverage issue](https://github.com/AngularClass/angular2-webpack-starter/issues/178).
+Angular 2 application with some examples (currently only HTTP service and component). Please, feel free to create issues and PRs.
 
-Feel free to create issues and PRs, though, if you know how to do this thing better.  
+Templates and stylesheets are embedded into JS bundle with help of [angular2-template-loader](https://github.com/TheLarkInn/angular2-template-loader). SASS/SCSS is used for styling. 
 
-### What's inside
-
-Angular 2 example application (examples for components, HTTP, forms, routing are yet to come - most likely when Angular 2 is out of RC state).
-
-Templates and stylesheets are embedded into JS bundle. I chose SASS for styling.
-
-`index.html` is generated using [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin). Some popular analytics/metrics are yet to be added there (e.g. Google Analytics or New Relic).
+`index.html` is generated using [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin).
 
 Hot module replacement is not provided here. Possibly I'll add it later. Same goes for service workers.
 
@@ -30,14 +24,30 @@ You won't find end-to-end tests in this project (usually people use Protractor f
 
 ### Building bundle(s)
 
-Use `npm run build` and you will get JS bundles, their maps and `index.html` in `dist` directory. To build for production, use `NODE_ENV=production npm run build` (webpack configuration is chosen according to this environment variable).
+Use `npm run build` and you will get JS bundles, their maps and `index.html` in `dist` directory.
+
+To build for production, use `NODE_ENV=production npm run build` (webpack configuration is chosen according to this environment variable).
 
 ### Documentation
 
-Run `npm run docs` to generate documentation for TypeScript ([typedoc](https://github.com/TypeStrong/typedoc) is used for that) and SASS stylesheets (done with [kss-node](https://github.com/kss-node/kss-node)). This might seem a little bit unusual to have docs for styles, but I find KSS very nice tool to keep them understandable.
+Run `npm run docs` to generate documentation for TypeScript ([typedoc](https://github.com/TypeStrong/typedoc) is used for that) and SASS stylesheets (done with [kss-node](https://github.com/kss-node/kss-node)).
 
-### Notes for development
+### Dev notes
 
-Modules are resolved not only from `node_modules` directory, but from `src` as well. This is done to keep imports simple and avoid situations like `import { MyService } from '../../../app.service'`.
+- Webpack is configured to resolve modules not only from `node_modules` directory, but also from `src`. This is done to keep imports simple and avoid situations like `import { MyService } from '../../../app.service'`. Especially important for tests, since they are in a separate directory. If you are using JetBrains IDE, mark `src` directory as resource root
 
-If you are using JetBrains IDE, mark `src` directory as resource root.
+- Upgrade to newer version of `istanbul-instrumenter-loader` (`0.2.0` to `1.0.0`) breaks code coverage
+
+- Upgrade to `awesome-typescript-loader@2.*.*` is not possible, as it is targeted to work with webpack 2, which is yet in beta and I don't want to use it until it's released
+
+## TODOs
+
+- Examples
+    - Typeahead with throttle/distinct
+    - Pipe
+    - AuthGuard in router
+    - Forms
+    - Input and Output
+    - rxjs-based WebSocket
+
+- Comments on tests

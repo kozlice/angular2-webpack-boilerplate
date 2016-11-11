@@ -1,1 +1,17 @@
-<h1 class="app__title">{{ appService.getTitle() }}</h1>
+<div class="container container-fluid">
+    <div class="row around-xs center-xs">
+        <div class="col-xs">
+            <h1 class="app__title">Example Angular 2 application</h1>
+        </div>
+    </div>
+
+    <nav class="row around-xs center-xs">
+        <div class="col-xs">
+            <a [routerLink]="['/']" routerLinkActive="active">Articles</a>
+        </div>
+    </nav>
+
+    <hr />
+
+    <router-outlet></router-outlet>
+</div>

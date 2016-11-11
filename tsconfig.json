@@ -20,7 +20,8 @@
   ],
   "awesomeTypescriptLoaderOptions": {
     "resolveGlobs": true,
-    "forkChecker": true
+    "forkChecker": true,
+    "useWebpackText": true
   },
   "compileOnSave": false,
   "buildOnSave": false

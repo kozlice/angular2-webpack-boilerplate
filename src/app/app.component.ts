@@ -1,19 +1,14 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { AppService } from './app.service';
 
+/**
+ * Styles required here are common for all components (SASS/SCSS versions of normalize.css and flexboxgrid),
+ * so encapsulation is not used. Other components have their styles scoped with `ViewEncapsulation.Emulated`.
+ */
 @Component({
     selector: 'da-app',
-    template: require('./app.html'),
-    styles: [
-        require('./app.scss')
-    ],
-    encapsulation: ViewEncapsulation.Native,
-    providers: [
-        AppService
-    ]
+    templateUrl: './app.html',
+    styleUrls: ['./app.scss'],
+    encapsulation: ViewEncapsulation.None,
+    providers: []
 })
-export class AppComponent {
-    constructor(public appService: AppService) {
-
-    }
-}
+export class AppComponent {}

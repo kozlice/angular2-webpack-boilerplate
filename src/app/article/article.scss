@@ -1,0 +1,20 @@
+@import "../variables";
+
+// An article detail view
+//
+// header          - Primary info
+// header h2       - Title
+// header h2:hover - Title is highlighted when hovered
+//
+// Styleguide base
+.article {
+  header {
+    h2 {
+      color: $heading-color;
+
+      &:hover {
+        color: $heading-highlight-color;
+      }
+    }
+  }
+}
