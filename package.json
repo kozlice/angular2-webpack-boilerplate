@@ -28,7 +28,6 @@
     "coverage:remap": "remap-istanbul -i coverage/coverage.json -o coverage/coverage.json -t json -e node_modules,tests,karma.entry.ts",
     "coverage:report": "istanbul report",
     "build": "webpack",
-    "preinstall": "npm run clean",
     "postinstall": "typings install",
     "docs": "npm run docs:typedoc && npm run docs:kss",
     "docs:typedoc": "typedoc --options ./typedoc.json ./src/app",
