@@ -6,8 +6,8 @@ import { FormsModule } from '@angular/forms';
 
 import { routing, appRoutingProviders }  from './app.routing';
 import { AppComponent } from 'app/app.component';
-import { ArticleComponent } from './article/article.component';
-import { ArticleListComponent } from './article/article-list.component';
+import { ArticleComponent } from 'app/article/article.component';
+import { ArticleListComponent } from 'app/article/article-list.component';
 
 @NgModule({
     imports: [
