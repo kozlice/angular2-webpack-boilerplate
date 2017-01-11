@@ -24,11 +24,7 @@ module.exports = {
 
     resolve: {
         extensions: ['', '.ts', '.js', '.scss', '.html'],
-        /**
-         * Adding src to resolving paths allows us to do, say, `import 'app/a/a.service'` instead of
-         * import `../../../a/service`. Especially useful for tests, since they are in a separate directory.
-         */
-        modulesDirectories: ['node_modules', 'src']
+        modulesDirectories: ['node_modules']
     },
 
     module: {
