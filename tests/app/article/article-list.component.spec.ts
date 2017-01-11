@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 import { ArticleService } from 'app/article/article.service';
 import { ArticleListComponent } from 'app/article/article-list.component';
 import { ArticleComponent } from 'app/article/article.component';
-import { Article } from '../../../src/app/article/article.model';
+import { Article } from 'app/article/article.model';
 
 const exampleArticleList: Article[] = [
     {
