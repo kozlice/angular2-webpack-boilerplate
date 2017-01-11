@@ -3,10 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { Observable } from 'rxjs';
 
-import { ArticleService } from 'app/article/article.service';
-import { ArticleComponent } from 'app/article/article.component';
-import { Article } from 'app/article/article.model';
+import { ArticleService } from '../../../src/app/article/article.service';
+import { Article } from '../../../src/app/article/article.model';
 import { ActivatedRouteStub } from '../../activated-route-stub';
+import { ArticleComponent } from '../../../src/app/article/article.component';
 
 const exampleArticle: Article = {
     id: 2,

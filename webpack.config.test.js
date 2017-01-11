@@ -25,13 +25,7 @@ module.exports = {
              */
             {
                 test: /\.ts$/,
-                loaders: [
-                    'awesome-typescript-loader?' + JSON.stringify({
-                        sourceMap: false,
-                        inlineSourceMap: true
-                    }),
-                    'angular2-template-loader'
-                ]
+                loaders: ['ts-loader', 'angular2-template-loader']
             },
             /**
              * These loaders are used in other environments as well, see `webpack.config.common.js`.
@@ -54,5 +48,12 @@ module.exports = {
                 ]
             }
         ]
+    },
+
+    /**
+     * Set specific TypeScript config for ts-loader
+     */
+    ts: {
+        configFileName: 'tsconfig.test.json'
     }
 };

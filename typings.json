@@ -1,8 +1,0 @@
-{
-  "name": "angular2-webpack-boilerplate",
-  "globalDependencies": {
-    "core-js": "registry:dt/core-js#0.9.7+20161130133742",
-    "jasmine": "registry:dt/jasmine#2.5.0+20161228223817",
-    "node": "registry:dt/node#6.0.0+20170109183608"
-  }
-}

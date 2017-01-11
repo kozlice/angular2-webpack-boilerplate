@@ -2,8 +2,8 @@ import { TestBed, inject } from '@angular/core/testing';
 import { BaseRequestOptions, Response, ResponseOptions, Http } from '@angular/http';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 
-import { ArticleService } from 'app/article/article.service';
-import { Article } from 'app/article/article.model';
+import { Article } from '../../../src/app/article/article.model';
+import { ArticleService } from '../../../src/app/article/article.service';
 
 const exampleArticleList: Article[] = [
     {

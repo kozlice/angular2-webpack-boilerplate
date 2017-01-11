@@ -6,7 +6,6 @@
  */
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 
 module.exports = {
     /**
@@ -44,7 +43,7 @@ module.exports = {
              */
             {
                 test: /\.ts$/,
-                loaders: ['awesome-typescript-loader', 'angular2-template-loader']
+                loaders: ['ts-loader', 'angular2-template-loader']
             },
 
             /**
@@ -61,12 +60,6 @@ module.exports = {
     },
 
     plugins: [
-        /**
-         * This plugin is a part of `awesome-typescript-loader`, it allows to run type checking in a separate process,
-         * so webpack won't wait for it.
-         */
-        new ForkCheckerPlugin(),
-
         /**
          * Quote from webpack docs: "Assign the module and chunk ids by occurrence count. Ids that are used often get
          * lower (shorter) ids. This make ids predictable, reduces total file size and is recommended."

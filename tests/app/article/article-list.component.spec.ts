@@ -4,10 +4,10 @@ import { HttpModule } from '@angular/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Observable } from 'rxjs';
 
-import { ArticleService } from 'app/article/article.service';
-import { ArticleListComponent } from 'app/article/article-list.component';
-import { ArticleComponent } from 'app/article/article.component';
-import { Article } from 'app/article/article.model';
+import { Article } from '../../../src/app/article/article.model';
+import { ArticleService } from '../../../src/app/article/article.service';
+import { ArticleComponent } from '../../../src/app/article/article.component';
+import { ArticleListComponent } from '../../../src/app/article/article-list.component';
 
 const exampleArticleList: Article[] = [
     {

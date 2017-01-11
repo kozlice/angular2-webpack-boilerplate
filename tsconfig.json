@@ -8,21 +8,13 @@
     "noImplicitAny": false,
     "removeComments": false,
     "noEmitHelpers": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "types": ["node"]
   },
-  "exclude": [
-    "node_modules"
+  "include": [
+    "src/*.ts",
+    "node_modules/@types/**/index.d.ts"
   ],
-  "filesGlob": [
-    "./src/app/**/*.ts",
-    "./typings/index.d.ts",
-    "!./node_modules/**"
-  ],
-  "awesomeTypescriptLoaderOptions": {
-    "resolveGlobs": true,
-    "forkChecker": true,
-    "useWebpackText": true
-  },
   "compileOnSave": false,
   "buildOnSave": false
 }
