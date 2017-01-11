@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
+import 'rxjs/add/operator/map';
 
 import { Article } from './article.model';
 
@@ -13,7 +14,9 @@ const API_ENDPOINT = 'https://jsonplaceholder.typicode.com/posts';
  */
 @Injectable()
 export class ArticleService {
-    constructor(private http: Http) {}
+    constructor(private http: Http) {
+
+    }
 
     public get(id: number): Observable<Article> {
         return this.http
