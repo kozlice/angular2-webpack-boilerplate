@@ -34,11 +34,9 @@ Run `npm run docs` to generate documentation for TypeScript ([typedoc](https://g
 
 ### Dev notes
 
-- Webpack is configured to resolve modules not only from `node_modules` directory, but also from `src`. This is done to keep imports simple and avoid situations like `import { MyService } from '../../../app.service'`. Especially important for tests, since they are in a separate directory. If you are using JetBrains IDE, mark `src` directory as resource root
+- Upgrade to `istanbul-instrumenter-loader@1.2.0` breaks code coverage
 
-- Upgrade to newer version of `istanbul-instrumenter-loader` (`0.2.0` to `1.0.0`) breaks code coverage
-
-- Upgrade to `awesome-typescript-loader@2.*.*` is not possible, as it is targeted to work with webpack 2, which is yet in beta and I don't want to use it until it's released
+- Upgrade to `remap-istanbul@0.8.*` leads to error in their binary (`SyntaxError: Block-scoped declarations (let, const, function, class) not yet supported outside strict mode`).
 
 ## TODOs
 

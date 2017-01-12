@@ -18,11 +18,6 @@ module.exports = {
 
     module: {
         loaders: [
-            /**
-             * Enable inline source maps for code coverage report.
-             *
-             * See info about loaders in dev config.
-             */
             {
                 test: /\.ts$/,
                 loaders: ['ts-loader', 'angular2-template-loader']
@@ -36,12 +31,12 @@ module.exports = {
         ],
         postLoaders: [
             /**
-             * Instruments TS source files for subsequent code coverage.
+             * Instruments source files for subsequent code coverage.
              * See https://github.com/deepsweet/istanbul-instrumenter-loader
              */
             {
                 test: /\.ts$/,
-                loader: 'istanbul-instrumenter-loader',
+                loader: 'istanbul-instrumenter-loader?embedSource=true&noAutoWrap=true',
                 exclude: [
                     'node_modules',
                     /\.(e2e|spec)\.ts$/
@@ -51,7 +46,7 @@ module.exports = {
     },
 
     /**
-     * Set specific TypeScript config for ts-loader
+     * Enable inline source maps for code coverage report.
      */
     ts: {
         configFileName: 'tsconfig.test.json'

@@ -12,6 +12,14 @@
   ],
   "author": "Valentin Nazarov <rusarmy@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kozlice/angular2-webpack-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kozlice/angular2-webpack-boilerplate/issues"
+  },
+  "homepage": "https://github.com/kozlice/angular2-webpack-boilerplate",
   "directories": {
     "test": "tests"
   },
@@ -19,10 +27,9 @@
     "lint": "npm run lint:ts && npm run lint:sass",
     "lint:ts": "tslint **/*.ts --exclude node_modules",
     "lint:sass": "sass-lint",
-    "pretest": "npm run lint",
+    "pretest": "rimraf ./coverage && npm run lint",
     "test": "karma start",
     "posttest": "npm run coverage",
-    "precoverage": "rimraf ./coverage",
     "coverage": "npm run coverage:remap && npm run coverage:report",
     "coverage:remap": "remap-istanbul -i coverage/coverage.json -o coverage/coverage.json -t json -e node_modules,tests,karma.entry.ts",
     "coverage:report": "istanbul report",
@@ -51,7 +58,7 @@
     "angular2-template-loader": "0.6.0",
     "codelyzer": "2.0.0-beta.4",
     "core-js": "2.4.1",
-    "es6-shim": "0.35.1",
+    "es6-shim": "0.35.2",
     "flexboxgrid-sass": "8.0.5",
     "html-loader": "0.4.4",
     "html-webpack-plugin": "2.26.0",
@@ -68,7 +75,7 @@
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "1.8.1",
     "kss": "3.0.0-beta.17",
-    "node-sass": "3.11.2",
+    "node-sass": "4.2.0",
     "normalize-scss": "6.0.0",
     "phantomjs-prebuilt": "2.1.14",
     "raw-loader": "0.5.1",
